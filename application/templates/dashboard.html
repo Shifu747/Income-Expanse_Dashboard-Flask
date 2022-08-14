@@ -21,6 +21,12 @@
 </div>
 {% block javascript %}
 <script>
+    Chart.scaleService.updateScaleDefaults('linear', {
+            ticks: {
+                min: 0
+            }
+    });
+
     let income_expenses = JSON.parse({{income_vs_expenses | tojson}})
 
     let income_vs_expense_chart = new Chart(income_vs_expense, {
